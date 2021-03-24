@@ -11,7 +11,7 @@ class Winners extends React.Component {
         return this.props.winners.map(winner => {
             return (
                 <div className="item" key={winner.driverStandingsId}>
-                  <h1>Hej</h1>
+                  <h1></h1>
                 </div>
             )
         })
