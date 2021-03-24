@@ -1,0 +1,29 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchDriverStandings } from '../actions';
+
+class Winners extends React.Component {
+
+    componentDidMount(){
+        this.props.fetchDriverStandings();
+    }
+    renderList() {
+        return this.props.winners.map(winner => {
+            return (
+                <div className="item" key={winner.wins}>
+                  <h1>Hej</h1>
+                </div>
+            )
+        })
+    }
+
+    render() {
+        return <div>{this.renderList()}</div>;
+    }
+}
+
+const mapStateToProps = state => {
+    return { winners: state.winners };
+}
+
+export default connect(mapStateToProps, {fetchDriverStandings})(Winners);
